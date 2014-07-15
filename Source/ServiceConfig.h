@@ -25,7 +25,9 @@ namespace ipop
 			const string & GetControllerRequest() const;
 			const string & GetTincanRequest() const;
 			size_t GetMaxStateMsgLen() const;
-			size_t GetMaxSvcStartAttempts() const;
+			size_t GetMaxSvcStartAttempts();
+			size_t GetHealthCheckInterval();
+			size_t GetMaxProbes();
 		private:
 			void QueryPythonPath(
 				wstring const & Version
@@ -39,6 +41,8 @@ namespace ipop
 			string mTincanRequest;
 			size_t mMaxStateMsgLen;
 			size_t mMaxSvcStartAttempts;
+			size_t mHealthCheckInterval;
+			size_t mMaxProbes;
 		};
 
 	}

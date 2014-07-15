@@ -19,7 +19,6 @@ extern ServiceConfig ServiceCfg;
 extern fstream dbgfile;
 
 WatchDog::WatchDog() :
-	mHealthCheckInterval(60000),
 	mTincanPort(5800),
 	mControllerPort(5801)
 {
@@ -58,11 +57,6 @@ makeMBStr(
 
 }
 
-size_t 
-WatchDog::GetHealthCheckInterval()
-{
-	return mHealthCheckInterval;
-}
 
 void 
 WatchDog::StartIPoPProcesses()
@@ -212,8 +206,21 @@ This routine aborts and terminates after THRESHOLD consecutive failed attempts.
 */
 void WatchDog::CheckHealth()
 {
-	cout << "health check...";
-	if (!IsServiceStateGood())
+	size_t retries = 0;
+	bool isGood = false;
+	cout << "health check ";
+	while (retries++ < ServiceCfg.GetMaxProbes())
+	{
+		if ((isGood = IsServiceStateGood()))
+			break;
+		else
+		{
+			cout << ".";
+			Sleep(10000);
+		}
+	}
+	
+	if (!isGood)
 	{
 		cout << "failed" << endl;
 		if (mFailureCount >= ServiceCfg.GetMaxSvcStartAttempts())
@@ -231,6 +238,7 @@ void WatchDog::CheckHealth()
 		cout << "OK" << endl;
 		mFailureCount = 0;
 	}
+	
 	return;
 }
 

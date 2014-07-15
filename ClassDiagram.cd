@@ -4,91 +4,91 @@
     <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABIAAAAAAAAAAAQAAAAAAAIAAAAAAAAAkAAEAAg=</HashCode>
-      <FileName>ClientUDPSocket.h</FileName>
+      <FileName>Source\ClientUDPSocket.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::EventLog" Collapsed="true">
     <Position X="10" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAAIAAEgAABAAAAAAEAEAAAAAAAAAAAAA=</HashCode>
-      <FileName>EventLog.h</FileName>
+      <FileName>Source\EventLog.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::IpopService" Collapsed="true">
     <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABIIAgAABAAgAAAAIAAAAAAEIDABAAAAI=</HashCode>
-      <FileName>IpopService.h</FileName>
+      <FileName>Source\IpopService.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::ServiceConfig" Collapsed="true">
     <Position X="11.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAJCAAEAMAAAAAACAASABAAABAAIAAAAAAAAKAA=</HashCode>
-      <FileName>ServiceConfig.h</FileName>
+      <HashCode>AAAAAAJKAAEAMAAAAAACAASABAAABAAIAEAAQEAAKAA=</HashCode>
+      <FileName>Source\ServiceConfig.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::WinException" Collapsed="true">
     <Position X="8.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAgADAAAAAAAAAAAAAAAAAAogAAQAAAAAAAAE=</HashCode>
-      <FileName>WinException.h</FileName>
+      <FileName>Source\WinException.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::Lock" Collapsed="true">
     <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Synchronized.h</FileName>
+      <FileName>Source\Synchronized.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::Mutex" Collapsed="true">
     <Position X="3.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAEAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIQA=</HashCode>
-      <FileName>Synchronized.h</FileName>
+      <FileName>Source\Synchronized.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::CriticalSection" Collapsed="true">
     <Position X="5.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgIAIAAEAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
-      <FileName>Synchronized.h</FileName>
+      <FileName>Source\Synchronized.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::Synchronized" Collapsed="true">
     <Position X="8.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAIgAAAAAAAAA=</HashCode>
-      <FileName>Synchronized.h</FileName>
+      <FileName>Source\Synchronized.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::SystemInfo" Collapsed="true">
     <Position X="10" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAAAAACSAAgECgQAQcAAAAAAAAAAAgAA=</HashCode>
-      <FileName>SystemInfo.h</FileName>
+      <FileName>Source\SystemInfo.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::Thread" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAIACAASAACAQAAAQAAAAAAAAAAAABAAgBAAgAAAI=</HashCode>
-      <FileName>Thread.h</FileName>
+      <FileName>Source\Thread.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::WatchDog" Collapsed="true">
     <Position X="11.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAASAAAAgAAQAAiAAAGAAACAAFgQQEAAAAg=</HashCode>
-      <FileName>WatchDog.h</FileName>
+      <HashCode>AAQAAAAAAAASAAAAgAAQAAiAAAGAAACAAFgQAAAAAAg=</HashCode>
+      <FileName>Source\WatchDog.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ipop::win::WinService" Collapsed="true">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAIAIIAkQBCIRlgBAABgIkQAEIADAAYkCCAJBAJAY=</HashCode>
-      <FileName>WinService.h</FileName>
+      <FileName>Source\WinService.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

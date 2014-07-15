@@ -16,7 +16,9 @@ ServiceConfig::ServiceConfig() :
 	mControllerRequest("\x2\x1{\"type\":\"echo_request\"}"),
 	mTincanRequest("\x2\x1{\"m\":\"get_state\",\"uid\":\"0000\"}"),
 	mMaxStateMsgLen(512),
-	mMaxSvcStartAttempts(15)
+	mMaxSvcStartAttempts(5),
+	mHealthCheckInterval(60000),
+	mMaxProbes(3)
 {
 }
 
@@ -65,8 +67,58 @@ ServiceConfig::GetMaxStateMsgLen() const
 }
 
 size_t 
-ServiceConfig::GetMaxSvcStartAttempts() const
+ServiceConfig::GetMaxSvcStartAttempts()
 {
+	HKEY regkey;
+	wstring regpath = L"SYSTEM\\CurrentControlSet\\services\\IPoPService\\";;
+	unsigned long	type = 0,
+					val = 0,
+					len = sizeof(val);
+	if (ERROR_SUCCESS == RegOpenKeyEx(HKEY_LOCAL_MACHINE, regpath.c_str(), 0, KEY_READ, &regkey))
+	{
+		if (ERROR_SUCCESS == RegQueryValueEx(regkey, L"MaxSvcStartAttempts", 0, &type, (LPBYTE)&val, &len))
+		{
+			mMaxSvcStartAttempts = val;
+		}
+	}
+
+	return mMaxSvcStartAttempts;
+}
+
+size_t
+ServiceConfig::GetHealthCheckInterval()
+{
+	HKEY regkey;
+	wstring regpath = L"SYSTEM\\CurrentControlSet\\services\\IPoPService\\";;
+	unsigned long	type = 0, 
+					val = 0, 
+					len = sizeof(val);
+	if (ERROR_SUCCESS == RegOpenKeyEx(HKEY_LOCAL_MACHINE, regpath.c_str(), 0, KEY_READ, &regkey))
+	{
+		if (ERROR_SUCCESS == RegQueryValueEx(regkey, L"HealthCheckInterval", 0, &type, (LPBYTE)&val, &len))
+		{
+			mHealthCheckInterval = val;
+		}
+	}
+	return mHealthCheckInterval;
+}
+
+size_t
+ServiceConfig::GetMaxProbes()
+{
+	HKEY regkey;
+	wstring regpath = L"SYSTEM\\CurrentControlSet\\services\\IPoPService\\";;
+	unsigned long	type = 0,
+					val = 0,
+					len = sizeof(val);
+	if (ERROR_SUCCESS == RegOpenKeyEx(HKEY_LOCAL_MACHINE, regpath.c_str(), 0, KEY_READ, &regkey))
+	{
+		if (ERROR_SUCCESS == RegQueryValueEx(regkey, L"MaxProbes", 0, &type, (LPBYTE)&val, &len))
+		{
+			mMaxProbes = val;
+		}
+	}
+
 	return mMaxSvcStartAttempts;
 }
 

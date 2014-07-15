@@ -2,6 +2,7 @@
 #include <fstream>
 #include "WinException.h"
 #include "EventLog.h"
+#include "ServiceConfig.h"
 #include "IpopService.h"
 
 using namespace std;
@@ -13,6 +14,7 @@ namespace win
 
 DEFINE_SERVICE(IpopService)
 extern EventLog EventLogger;
+extern ServiceConfig ServiceCfg;
 extern fstream dbgfile;
 
 IpopService::IpopService(
@@ -63,7 +65,7 @@ void IpopService::Run(){
 	try{
 		mWDog.StartIPoPProcesses();
 		while (true){
-			unsigned long wait = WaitForSingleObject(mSvcExitEv, mWDog.GetHealthCheckInterval()); //60sec
+			unsigned long wait = WaitForSingleObject(mSvcExitEv, ServiceCfg.GetHealthCheckInterval()); //60sec
 			switch (wait){
 			case WAIT_TIMEOUT:
 				//check processes status

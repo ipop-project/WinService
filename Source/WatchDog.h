@@ -23,7 +23,6 @@ namespace ipop
 			void StartIPoPProcesses();
 			void TerminateIPoPProcesses();
 			void CheckHealth();
-			size_t GetHealthCheckInterval();
 		private:
 
 			void CheckControllerHealth(bool & Status);
@@ -32,7 +31,6 @@ namespace ipop
 			
 			PROCESS_INFORMATION mCtrlerPI, mTincanPI;
 			unsigned int mFailureCount;
-			size_t mHealthCheckInterval;
 			short mTincanPort;
 			short mControllerPort;
 			string mTincanAddress;
